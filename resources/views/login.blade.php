@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form method="post" class="py-5">
+    <form method="POST" class="py-5">
 
         @csrf
 

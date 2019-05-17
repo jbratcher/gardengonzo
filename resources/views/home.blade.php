@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1 class="display-4">Gardenganza</h1>
+    <h1 class="display-4">Gardengonzo</h1>
     <p>Schedule your garden time</p>
 
     <section class="card">

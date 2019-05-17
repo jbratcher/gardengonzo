@@ -19,8 +19,11 @@ Route::get('/register', 'UsersController@registerUser');
 
 Route::post('/register', 'UsersController@postUser');
 
-Route::get('/about', "PagesController@about");
+Route::get('/about', 'PagesController@about');
 
-Route::get('/contact', "PagesController@contact");
+Route::get('/contact', 'PagesController@contact');
 
-Route::get('/garden_dates', "GardenDatesController@index");
+Route::get('/important_dates', 'ImportantDatesController@index');
+
+Route::get('/new_date', 'NewDatesController@create');
+Route::post('/new_date', 'NewDatesController@store');

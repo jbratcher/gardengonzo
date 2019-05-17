@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title', "Gardenganza")</title>
+    <title>@yield('title', "Gardengonzo")</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <!-- CSS  -->
@@ -23,6 +23,7 @@
             <li><a href="/register" rel="noopener noreferrer">Register</a></li>
             <li><a href="/about" rel="noopener noreferrer">About</a></li>
             <li><a href="/contact" rel="noopener noreferrer">Contact</a></li>
+            <li><a href="/important_dates" rel="noopener noreferrer">Important Dates</a></li>
         </ul>
     </nav>
 
@@ -35,7 +36,7 @@
 </main>
 
 <footer>
-    <span>Gardenganza 2019</span>
+    <span>Gardengonzo 2019</span>
 </footer>
 
 </body>

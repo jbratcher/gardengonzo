@@ -21325,8 +21325,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Nunito", sans-serif;
-  font-weight: 200;
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   margin: 0;
 }
@@ -21339,6 +21338,11 @@ footer {
   align-items: center;
   text-align: center;
   width: 100vw;
+}
+
+header,
+footer {
+  padding: 2rem 0;
 }
 
 nav ul {
@@ -21356,5 +21360,10 @@ nav ul li a {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.form-group textarea {
+  display: flex;
+  flex-direction: column;
 }
 
