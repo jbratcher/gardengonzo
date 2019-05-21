@@ -5,7 +5,7 @@
 @section('content')
 
     <h2>Add an important date</h2>
-    <form method="POST" action="">
+    <form method="POST" action="/important_dates">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name:</label>

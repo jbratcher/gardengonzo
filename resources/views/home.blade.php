@@ -4,17 +4,21 @@
 
 @section('content')
 
-    <h1 class="display-4">Gardengonzo</h1>
-    <p>Schedule your garden time</p>
+    <section class="jumbotron-fluid">
+        <h1 class="display-4">Gardengonzo</h1>
+        <p>Schedule your garden time</p>
+    </section>
 
-    <section class="card">
-        <section class="card-body"
-            <ul class="list-group">
-                <li class="list-group-item">Get daily reminders on what you should be doing in your garden <br> based on time of year down to the week/day.</li>
-                <li class="list-group-item">Get information on your growing zone</li>
-                <li class="list-group-item">Get information on native plants based on your location</li>
-            </ul>
-        </section>
+    <section class="featuresList">
+
+        <p>Get daily reminders on what you should be doing in your garden based on time of year down to the week/day.</p>
+        <img src="images/home_header.jpg" alt="garden tools" class="featuresListImage" />
+
+        <img src="images/watering.jpg" alt="garden tools" class="featuresListImage" />
+        <p>Get information on your growing zone.</p>
+
+        <p>Get information on native plants based on your location.</p>
+        <img src="images/native_plants.jpg" alt="garden tools" class="featuresListImage" />
     </section>
 
 @endsection

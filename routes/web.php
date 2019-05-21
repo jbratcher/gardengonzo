@@ -23,7 +23,21 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', 'PagesController@contact');
 
-Route::get('/important_dates', 'ImportantDatesController@index');
+/*
+    /GET /important_dates (index)
+    /GET /important_dates/create (create)
+    /GET /important_dates/{id} (show)
+    /POST /important_dates (store)
+    /GET /important_dates/{id}/edit (edit)
+    /PATCH /important_dates/{id} (update)
+    /DELETE /important_dates/{id} (destroy)
+*/
 
-Route::get('/new_date', 'NewDatesController@create');
-Route::post('/new_date', 'NewDatesController@store');
+//Route::resource('important_dates', 'ImportantDatesController');
+Route::get('important_dates', 'ImportantDatesController@index');
+Route::get('important_dates/create', 'ImportantDatesController@create');
+Route::get('important_dates/{important_date}', 'ImportantDatesController@show');
+Route::post('important_dates', 'ImportantDatesController@store');
+Route::get('important_dates/{important_date}/edit', 'ImportantDatesController@edit');
+Route::patch('important_dates/{important_date}', 'ImportantDatesController@update');
+Route::delete('important_dates/{important_date}', 'ImportantDatesController@destroy');

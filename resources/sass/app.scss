@@ -16,6 +16,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -29,7 +35,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -41,8 +48,12 @@ header, main, footer {
   width: 100vw;
 }
 
-header, footer {
+header {
   padding: 2rem 0;
+}
+
+footer {
+  padding: 6rem 0 2rem;
 }
 
 nav ul {
@@ -62,8 +73,45 @@ ul {
   padding: 0;
 }
 
+// home page
+
+.jumbotron-fluid {
+  margin: 0 0 4rem;
+}
+
+.featuresList {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  p {
+    font-size: 1.25rem;
+    margin: 0 2rem;
+  }
+
+  img {
+    border: 1px solid rgba(0,0,0,0.25);
+    border-radius: 20px;
+    object-fit: cover;
+    width: 40vw;
+    height: 60vh;
+    margin: 0 auto;
+  }
+}
+
 .form-group textarea {
   display: flex;
   flex-direction: column;
+}
+
+.importantDateList {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  li {
+    margin: 1rem 0;
+  }
 }
 
