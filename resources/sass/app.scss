@@ -28,6 +28,13 @@
   align-items: center;
 }
 
+a {
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 html, body {
   background-color: #eee;
   color: #636b6f;
@@ -63,6 +70,7 @@ nav ul {
     margin: 0 1rem;
 
     a {
+      color: #333;
       text-decoration: none;
     }
   }
@@ -100,18 +108,63 @@ ul {
   }
 }
 
-.form-group textarea {
-  display: flex;
-  flex-direction: column;
-}
+// important dates page
 
 .importantDateList {
   display: flex;
   flex-direction: column;
   text-align: left;
+  min-width: 30vw;
+  max-width: 90vw;
 
   li {
     margin: 1rem 0;
   }
 }
 
+// forms pages
+
+.mainForm {
+  min-width: 30vw;
+}
+
+.form-group textarea {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-outline-danger {
+  color: #212529;
+
+  &:hover {
+    color: #fefefe;
+    text-decoration: none;
+  }
+}
+
+.btn-outline-secondary a {
+  color: #212529;
+
+  &:hover {
+    color: #fefefe;
+    text-decoration: none;
+  }
+}
+
+.card-footer {
+  display: flex;
+
+  button {
+    margin: 0 0.5rem;
+  }
+}
+
+// show date page
+
+.showDate {
+  min-width: 30vw;
+
+  .card-footer {
+    justify-content: center;
+  }
+}

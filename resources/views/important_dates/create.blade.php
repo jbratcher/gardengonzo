@@ -5,16 +5,16 @@
 @section('content')
 
     <h2>Add an important date</h2>
-    <form method="POST" action="/important_dates">
+    <form method="POST" action="/important_dates" class="mainForm">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="name" name="name" value="Name">
         </div>
 
         <div class="form-group">
             <label for="description">Description:</label>
-            <input type="text" class="form-control" id="description" name="description">
+            <textarea type="text" class="form-control" id="description" name="description" rows="5">Enter a description here...</textarea>
         </div>
 
         <div class="form-group">

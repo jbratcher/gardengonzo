@@ -55,4 +55,11 @@ class ImportantDatesController extends Controller
         return redirect()->to('/important_dates');
     }
 
+    public function destroy($id)
+    {
+        ImportantDate::find($id) -> delete();
+
+        return redirect()->to('/important_dates');
+    }
+
 }

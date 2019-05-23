@@ -21326,6 +21326,10 @@ a.text-dark:focus {
   align-items: center;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 html,
 body {
   background-color: #eee;
@@ -21366,6 +21370,7 @@ nav ul li {
 }
 
 nav ul li a {
+  color: #333;
   text-decoration: none;
 }
 
@@ -21400,18 +21405,58 @@ ul {
   margin: 0 auto;
 }
 
+.importantDateList {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 30vw;
+  max-width: 90vw;
+}
+
+.importantDateList li {
+  margin: 1rem 0;
+}
+
+.mainForm {
+  min-width: 30vw;
+}
+
 .form-group textarea {
   display: flex;
   flex-direction: column;
 }
 
-.importantDateList {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+.btn-outline-danger {
+  color: #212529;
 }
 
-.importantDateList li {
-  margin: 1rem 0;
+.btn-outline-danger:hover {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.btn-outline-secondary a {
+  color: #212529;
+}
+
+.btn-outline-secondary a:hover {
+  color: #fefefe;
+  text-decoration: none;
+}
+
+.card-footer {
+  display: flex;
+}
+
+.card-footer button {
+  margin: 0 0.5rem;
+}
+
+.showDate {
+  min-width: 30vw;
+}
+
+.showDate .card-footer {
+  justify-content: center;
 }
 
