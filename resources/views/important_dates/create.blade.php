@@ -18,6 +18,11 @@
         </div>
 
         <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="time" class="form-control" id="time" name="time">
+        </div>
+
+        <div class="form-group">
             <button  type="submit" class="btn btn-primary">Submit</button>
         </div>
 

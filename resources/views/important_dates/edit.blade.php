@@ -19,6 +19,11 @@
         </div>
 
         <div class="form-group">
+            <label for="time">Time:</label>
+            <input type="time" class="form-control" id="time" name="time" value="{{ $date->time }}">
+        </div>
+
+        <div class="form-group">
             <button type="submit" class="btn btn-outline-secondary">Update Date</button>
         </div>
 

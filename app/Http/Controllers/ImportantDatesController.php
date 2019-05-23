@@ -23,7 +23,8 @@ class ImportantDatesController extends Controller
     {
         ImportantDate::create([
             'name' => request('name'),
-            'description' => request('description')
+            'description' => request('description'),
+            'time' => request('time')
         ]);
 
         return redirect()->to('/important_dates');
@@ -49,6 +50,7 @@ class ImportantDatesController extends Controller
 
         $date->name = request("name");
         $date->description = request("description");
+        $date->time = request('time');
 
         $date->save();
 
