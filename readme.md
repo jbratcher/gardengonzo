@@ -1,11 +1,8 @@
-// Class notes 5/24
+# Gardengonzo
 
-Carbon
-DateTime
-php date time
+A all in one garden management system that allows you to schedule tasks and get reminders.  
 
-user auth
-laravel docs
-
-config/auth.php
-
+Built with:
+* Laravel 5.8
+* MySQL
+* Bootstrap 4
