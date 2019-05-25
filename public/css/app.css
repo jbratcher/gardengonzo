@@ -21452,6 +21452,11 @@ ul {
   margin: 0 0.5rem;
 }
 
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .showDate {
   min-width: 30vw;
 }

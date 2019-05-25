@@ -13,12 +13,6 @@
 
 Route::get('/', 'PagesController@home');
 
-Route::get('/login', "PagesController@login");
-
-Route::get('/register', 'UsersController@registerUser');
-
-Route::post('/register', 'UsersController@postUser');
-
 Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', 'PagesController@contact');
@@ -41,3 +35,7 @@ Route::post('important_dates', 'ImportantDatesController@store');
 Route::get('important_dates/{important_date}/edit', 'ImportantDatesController@edit');
 Route::patch('important_dates/{important_date}', 'ImportantDatesController@update');
 Route::delete('important_dates/{important_date}', 'ImportantDatesController@destroy');
+
+Auth::routes();
+
+

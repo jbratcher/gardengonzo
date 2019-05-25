@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/app')
 
 @section('title', 'Add an Important Date')
 
@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label for="time">Time:</label>
-            <input type="time" class="form-control" id="time" name="time">
+            <input type="datetime-local" class="form-control" id="time" name="time">
         </div>
 
         <div class="form-group">

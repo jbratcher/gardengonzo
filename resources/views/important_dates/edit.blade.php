@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/apps')
 
 @section('title', 'Edit Date')
 
@@ -20,7 +20,7 @@
 
         <div class="form-group">
             <label for="time">Time:</label>
-            <input type="time" class="form-control" id="time" name="time" value="{{ $date->time }}">
+            <input type="datetime-local" class="form-control" id="time" name="time" value="{{ $date->time }}">
         </div>
 
         <div class="form-group">

@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function registerUser()
-    {
-        return view('register');
-    }
-
     public function postUser(Request $request)
     {
         $user = new User();

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts/app')
 
 @section('title', 'Important Dates')
 
@@ -19,6 +19,9 @@
                                 {{$date->name}}
                             </a>
                         </h5>
+                        <span class="card-text">
+                            {{$date->time}}
+                        </span>
                     </section>
                     <section class="card-body">
                         <p class="card-text">{{$date->description}}</p>

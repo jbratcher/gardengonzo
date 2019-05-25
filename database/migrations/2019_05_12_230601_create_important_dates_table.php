@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGardenDatesTable extends Migration
+class CreateImportantDatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateGardenDatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('garden_dates', function (Blueprint $table) {
+        Schema::create('important_dates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("name");
             $table->string("description");
+            $table->dateTime("time");
             $table->timestamps();
         });
     }
