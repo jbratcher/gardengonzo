@@ -35,13 +35,13 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link"  href="/important_dates" rel="noopener noreferrer">Important Dates</a>
+                            <a class="nav-link"  href="{{ route('important_dates') }}" rel="noopener noreferrer">Important Dates</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="/about" rel="noopener noreferrer">About</a>
+                            <a class="nav-link"  href="{{ route('about') }}" rel="noopener noreferrer">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="/contact" rel="noopener noreferrer">Contact</a>
+                            <a class="nav-link"  href="{{ route('counter') }}" rel="noopener noreferrer">Contact</a>
                         </li>
 
                     </ul>

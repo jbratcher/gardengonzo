@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@home')->name('index');
 
-Route::get('/about', 'PagesController@about');
+Route::get('/about', 'PagesController@about')->name('about');
 
-Route::get('/contact', 'PagesController@contact');
+Route::get('/contact', 'PagesController@contact')->name('contact');
 
 /*
     /GET /important_dates (index)
@@ -28,10 +28,10 @@ Route::get('/contact', 'PagesController@contact');
 */
 
 //Route::resource('important_dates', 'ImportantDatesController');
-Route::get('important_dates', 'ImportantDatesController@index');
+Route::get('important_dates', 'ImportantDatesController@index')->name('important_dates');
 Route::get('important_dates/create', 'ImportantDatesController@create');
-Route::get('important_dates/{important_date}', 'ImportantDatesController@show');
 Route::post('important_dates', 'ImportantDatesController@store');
+Route::get('important_dates/{important_date}', 'ImportantDatesController@show');
 Route::get('important_dates/{important_date}/edit', 'ImportantDatesController@edit');
 Route::patch('important_dates/{important_date}', 'ImportantDatesController@update');
 Route::delete('important_dates/{important_date}', 'ImportantDatesController@destroy');
