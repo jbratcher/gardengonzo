@@ -41,7 +41,7 @@
                             <a class="nav-link"  href="{{ route('about') }}" rel="noopener noreferrer">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link"  href="{{ route('counter') }}" rel="noopener noreferrer">Contact</a>
+                            <a class="nav-link"  href="{{ route('contact') }}" rel="noopener noreferrer">Contact</a>
                         </li>
 
                     </ul>
