@@ -4,32 +4,37 @@
 
 @section('content')
 
-    <h1>Important Dates</h1>
+    <section class="important-dates-container">
 
-    <p><a href="/important_dates/create">Add an important date</a></p>
+        <h1>Important Dates</h1>
 
-    <ul class="importantDateList">
+        <p><a href="/important_dates/create"><i class="fas fa-plus-circle"></i></a>
+        <a href="/important_dates/create">Add an important date</a></p>
 
-        @foreach($dates as $date)
-            <li>
-                <section class="card">
-                    <section class="card-header">
-                        <h5 class="card-title">
-                            <a href="important_dates/{{$date->id}}">
-                                {{$date->name}}
-                            </a>
-                        </h5>
-                        <span class="card-text">
-                            {{$date->time}}
-                        </span>
+        <ul class="importantDateList">
+
+            @foreach($dates as $date)
+                <li>
+                    <section class="card">
+                        <section class="card-header">
+                            <h5 class="card-title">
+                                <a href="important_dates/{{$date->id}}">
+                                    {{$date->name}}
+                                </a>
+                            </h5>
+                            <span class="card-text">
+                                {{$date->time}}
+                            </span>
+                        </section>
+                        <section class="card-body">
+                            <p class="card-text">{{$date->description}}</p>
+                        </section>
                     </section>
-                    <section class="card-body">
-                        <p class="card-text">{{$date->description}}</p>
-                    </section>
-                </section>
-            </li>
-        @endforeach
+                </li>
+            @endforeach
 
-    </ul>
+        </ul>
+
+    </section>
 
 @endsection

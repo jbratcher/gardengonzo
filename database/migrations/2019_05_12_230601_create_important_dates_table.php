@@ -18,6 +18,7 @@ class CreateImportantDatesTable extends Migration
             $table->string("name");
             $table->string("description");
             $table->dateTime("time");
+            $table->bigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateImportantDatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('garden_dates');
+        Schema::dropIfExists('important_dates');
     }
 }

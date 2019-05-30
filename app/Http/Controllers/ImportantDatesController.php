@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ImportantDate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ImportantDatesController extends Controller
 {
@@ -24,7 +25,8 @@ class ImportantDatesController extends Controller
         ImportantDate::create([
             'name' => request('name'),
             'description' => request('description'),
-            'time' => request('time')
+            'time' => request('time'),
+            'user_id' => Auth::id()
         ]);
 
         return redirect()->to('/important_dates');

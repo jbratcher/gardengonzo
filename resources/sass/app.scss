@@ -110,15 +110,28 @@ ul {
 
 // important dates page
 
+.important-dates-container{
+
+    h2, p {
+        margin: 2rem 0;
+    }
+
+    ul {
+        margin: 4rem 0;
+    }
+}
+
 .importantDateList {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  min-width: 30vw;
-  max-width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 40px;
+
 
   li {
-    margin: 1rem 0;
+      width: 30vw;
+      height: auto;
+      min-height: 50vh;
   }
 }
 
