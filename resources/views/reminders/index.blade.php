@@ -1,33 +1,33 @@
 @extends('layouts/app')
 
-@section('title', 'Important Dates')
+@section('title', 'Reminders')
 
 @section('content')
 
-    <section class="important-dates-container">
+    <section class="reminders-container">
 
-        <h1>Important Dates</h1>
+        <h1>Reminders</h1>
 
-        <p><a href="/important_dates/create"><i class="fas fa-plus-circle"></i></a>
-        <a href="/important_dates/create">Add an important date</a></p>
+        <p><a href="/reminders/create"><i class="fas fa-plus-circle"></i></a>
+        <a href="/reminders/create">Add a reminder</a></p>
 
-        <ul class="importantDateList">
+        <ul class="reminders-list">
 
-            @foreach($dates as $date)
+            @foreach($reminders as $reminder)
                 <li>
                     <section class="card">
                         <section class="card-header">
                             <h5 class="card-title">
-                                <a href="important_dates/{{$date->id}}">
-                                    {{$date->name}}
+                                <a href="reminders/{{$reminder->id}}">
+                                    {{$reminder->title}}
                                 </a>
                             </h5>
                             <span class="card-text">
-                                {{$date->time}}
+                                {{$reminder->time}}
                             </span>
                         </section>
                         <section class="card-body">
-                            <p class="card-text">{{$date->description}}</p>
+                            <p class="card-text">{{$reminder->description}}</p>
                         </section>
                     </section>
                 </li>

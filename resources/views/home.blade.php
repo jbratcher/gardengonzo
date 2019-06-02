@@ -9,7 +9,7 @@
         <p>Schedule your garden time</p>
     </section>
 
-    <section class="featuresList">
+    <section class="features-list">
 
         <p>Get daily reminders on what you should be doing in your garden based on time of year down to the week/day.</p>
         <img src="images/home_header.jpg" alt="garden tools" class="featuresListImage" />

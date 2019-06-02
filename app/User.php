@@ -37,8 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function important_date()
+    public function reminders()
     {
-        return $this->hasMany('App\ImportantDate');
+        return $this->hasMany(Reminder::class);
     }
 }

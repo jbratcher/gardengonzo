@@ -21383,19 +21383,19 @@ ul {
   margin: 0 0 4rem;
 }
 
-.featuresList {
+.features-list {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.featuresList p {
+.features-list p {
   font-size: 1.25rem;
   margin: 0 2rem;
 }
 
-.featuresList img {
+.features-list img {
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   -o-object-fit: cover;
@@ -21405,29 +21405,29 @@ ul {
   margin: 0 auto;
 }
 
-.important-dates-container h2,
-.important-dates-container p {
+.reminders-container h2,
+.reminders-container p {
   margin: 2rem 0;
 }
 
-.important-dates-container ul {
+.reminders-container ul {
   margin: 4rem 0;
 }
 
-.importantDateList {
+.reminders-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-gap: 40px;
 }
 
-.importantDateList li {
+.reminders-list li {
   width: 30vw;
   height: auto;
   min-height: 50vh;
 }
 
-.mainForm {
+.main-form {
   min-width: 30vw;
 }
 
@@ -21467,11 +21467,16 @@ ul {
   justify-content: space-between;
 }
 
-.showDate {
+.card-header h5,
+.card-header span {
+  padding: 0 0.5rem;
+}
+
+.show-date {
   min-width: 30vw;
 }
 
-.showDate .card-footer {
+.show-date .card-footer {
   justify-content: center;
 }
 

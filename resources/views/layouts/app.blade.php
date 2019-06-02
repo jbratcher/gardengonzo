@@ -37,7 +37,7 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link"  href="{{ route('important_dates') }}" rel="noopener noreferrer">Important Dates</a>
+                            <a class="nav-link"  href="{{ route('reminders.index') }}" rel="noopener noreferrer">Reminders</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"  href="{{ route('about') }}" rel="noopener noreferrer">About</a>

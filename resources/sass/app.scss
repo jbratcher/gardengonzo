@@ -87,7 +87,7 @@ ul {
   margin: 0 0 4rem;
 }
 
-.featuresList {
+.features-list {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -108,9 +108,9 @@ ul {
   }
 }
 
-// important dates page
+// Reminders page
 
-.important-dates-container{
+.reminders-container{
 
     h2, p {
         margin: 2rem 0;
@@ -121,12 +121,11 @@ ul {
     }
 }
 
-.importantDateList {
+.reminders-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 40px;
-
 
   li {
       width: 30vw;
@@ -137,7 +136,7 @@ ul {
 
 // forms pages
 
-.mainForm {
+.main-form {
   min-width: 30vw;
 }
 
@@ -177,11 +176,15 @@ ul {
 .card-header {
   display: flex;
   justify-content: space-between;
+
+    h5, span {
+        padding: 0 0.5rem;
+    }
 }
 
 // show date page
 
-.showDate {
+.show-date {
   min-width: 30vw;
 
   .card-footer {

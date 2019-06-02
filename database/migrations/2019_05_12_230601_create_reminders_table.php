@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImportantDatesTable extends Migration
+class CreateRemindersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateImportantDatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('important_dates', function (Blueprint $table) {
+        Schema::create('reminders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("name");
-            $table->string("description");
+            $table->unsignedInteger('user_id');
+            $table->string("title");
             $table->dateTime("time");
-            $table->bigInteger('user_id');
+            $table->string("description");
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateImportantDatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('important_dates');
+        Schema::dropIfExists('reminders');
     }
 }
