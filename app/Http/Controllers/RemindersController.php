@@ -11,7 +11,7 @@ class RemindersController extends Controller
 {
     public function index()
     {
-        $reminders = Reminder::all();
+        $reminders = Reminder::orderBy('time', 'desc')->get();
 
         return view("reminders.index", compact('reminders'));
     }
@@ -65,6 +65,15 @@ class RemindersController extends Controller
         $reminder -> delete();
 
         return redirect()->to('/reminders');
+    }
+
+    public function completed(Reminder $reminder)
+    {
+        $reminder->update([
+            'completed' => request()->has('completed')
+        ]);
+
+        return back();
     }
 
 }

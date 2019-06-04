@@ -21427,6 +21427,36 @@ ul {
   min-height: 50vh;
 }
 
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header h5,
+.card-header span {
+  padding: 0 0.5rem;
+}
+
+.reminder-header h5 a,
+.reminder-header form label,
+.reminder-completed-header h5 a,
+.reminder-completed-header form label {
+  color: #fff;
+}
+
+.reminder-header input,
+.reminder-completed-header input {
+  vertical-align: text-bottom;
+}
+
+.reminder-header {
+  background: #FF5722;
+}
+
+.reminder-completed-header {
+  background: #009688;
+}
+
 .main-form {
   min-width: 30vw;
 }
@@ -21460,16 +21490,6 @@ ul {
 
 .card-footer button {
   margin: 0 0.5rem;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card-header h5,
-.card-header span {
-  padding: 0 0.5rem;
 }
 
 .show-date {
