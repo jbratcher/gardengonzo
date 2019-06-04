@@ -61,4 +61,9 @@
 
     </section>
 
+    <reminders-list
+        :reminders = "{{ $reminders }}"
+    ></reminders-list>
+
+
 @endsection
