@@ -134,6 +134,35 @@ ul {
   }
 }
 
+// index date page
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+
+    h5, span {
+        padding: 0 0.5rem;
+    }
+}
+
+.reminder-header, .reminder-completed-header {
+    h5 a, form label {
+        color: #fff;
+    }
+
+    input {
+        vertical-align: text-bottom;
+    }
+}
+
+.reminder-header {
+    background: #FF5722;
+}
+
+.reminder-completed-header {
+    background: #009688;
+}
+
 // forms pages
 
 .main-form {
@@ -169,17 +198,6 @@ ul {
   button {
     margin: 0 0.5rem;
   }
-}
-
-// index date page
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-
-    h5, span {
-        padding: 0 0.5rem;
-    }
 }
 
 // show date page

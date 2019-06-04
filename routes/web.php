@@ -18,6 +18,7 @@ Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 
 Route::resource('reminders', 'RemindersController');
+Route::patch('reminders/{reminder}', 'RemindersController@completed');
 
 Auth::routes();
 
