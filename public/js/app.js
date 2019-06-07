@@ -1811,7 +1811,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+    };
+  },
   props: ['reminders']
 });
 
@@ -37163,19 +37185,82 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h2", [_vm._v("Reminders List")]),
-    _vm._v(" "),
-    _c(
-      "ul",
-      _vm._l(_vm.reminders, function(reminder) {
-        return _c("li", [
-          _vm._v("\n            " + _vm._s(reminder.title) + "\n        ")
+  return _c(
+    "ul",
+    _vm._l(_vm.reminders, function(reminder) {
+      return _c("li", [
+        _c("section", { staticClass: "card" }, [
+          _c(
+            "section",
+            {
+              class: reminder.completed
+                ? "reminder-completed-header card-header"
+                : "reminder-header card-header"
+            },
+            [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(
+                  "\n                        " +
+                    _vm._s(reminder.title) +
+                    "\n                    "
+                ),
+                _c("a", {
+                  attrs: { href: "reminders/" + reminder.id + "/completed" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("span", { staticClass: "card-text" }, [
+                _c(
+                  "form",
+                  {
+                    attrs: {
+                      method: "POST",
+                      action: "reminders/" + reminder.id + "/completed"
+                    }
+                  },
+                  [
+                    _c("input", {
+                      attrs: { type: "hidden", name: "_method", value: "PATCH" }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: { type: "hidden", name: "_token" },
+                      domProps: { value: _vm.csrf }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "completed" } }, [
+                      _vm._v("Completed")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        type: "checkbox",
+                        id: "completed",
+                        name: "completed",
+                        onChange: "this.form.submit()"
+                      },
+                      domProps: { checked: reminder.completed ? "checked" : "" }
+                    })
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("section", { staticClass: "card-body" }, [
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(reminder.time))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v(_vm._s(reminder.description))
+            ])
+          ])
         ])
-      }),
-      0
-    )
-  ])
+      ])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
