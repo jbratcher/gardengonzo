@@ -22,6 +22,8 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component('reminders-list', require('./components/RemindersList.vue').default);
+Vue.component('reminders-form', require('./components/RemindersForm.vue').default);
+
 
 
 /**

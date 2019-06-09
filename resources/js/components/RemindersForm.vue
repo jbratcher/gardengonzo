@@ -1,0 +1,46 @@
+<template>
+
+    <section>
+
+        <p>
+            <i class="fas fa-plus-circle" v-on:click="isOpen = !isOpen"></i>
+            Add a reminder
+        </p>
+
+        <form v-show="isOpen" method="POST" action="/reminders" class="main-form">
+            <input type="hidden" name="_token" :value="csrf" />
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" value="Title" >
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="datetime-local" class="form-control" id="time" name="time">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea type="text" class="form-control" id="description" name="description" rows="5">Enter a description here...</textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </form>
+
+    </section>
+
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                isOpen: false
+            }
+        }
+    }
+</script>

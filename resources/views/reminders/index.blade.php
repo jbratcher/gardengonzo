@@ -8,8 +8,7 @@
 
         <h1>Reminders</h1>
 
-        <p><a href="/reminders/create"><i class="fas fa-plus-circle"></i></a>
-        <a href="/reminders/create">Add a reminder</a></p>
+        <reminders-form></reminders-form>
 
         <ul class="reminders-list">
 
@@ -61,9 +60,9 @@
 
     </section>
 
-    <reminders-list
-        :reminders = "{{ $reminders }}"
-    ></reminders-list>
+{{--    <reminders-list--}}
+{{--        :reminders = "{{ $reminders }}"--}}
+{{--    ></reminders-list>--}}
 
 
 @endsection
