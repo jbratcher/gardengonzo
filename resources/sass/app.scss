@@ -163,6 +163,38 @@ ul {
     background: #009688;
 }
 
+// reminder create form
+
+.reminder-create-form {
+    width: 30vw;
+    height: auto;
+    min-height: 50vh;
+
+    .form-group {
+        margin: 0.5rem 0;
+    }
+
+    .card-header {
+        background: #6cb2eb;
+
+        .form-group {
+            margin: 0;
+        }
+    }
+
+    .card-footer {
+
+        .form-group {
+            margin: 0 0 0 auto;
+        }
+    }
+
+
+
+}
+
+
+
 // forms pages
 
 .main-form {

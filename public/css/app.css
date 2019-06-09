@@ -21457,6 +21457,28 @@ ul {
   background: #009688;
 }
 
+.reminder-create-form {
+  width: 30vw;
+  height: auto;
+  min-height: 50vh;
+}
+
+.reminder-create-form .form-group {
+  margin: 0.5rem 0;
+}
+
+.reminder-create-form .card-header {
+  background: #6cb2eb;
+}
+
+.reminder-create-form .card-header .form-group {
+  margin: 0;
+}
+
+.reminder-create-form .card-footer .form-group {
+  margin: 0 0 0 auto;
+}
+
 .main-form {
   min-width: 30vw;
 }

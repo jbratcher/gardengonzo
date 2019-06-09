@@ -7,26 +7,41 @@
             Add a reminder
         </p>
 
-        <form v-show="isOpen" method="POST" action="/reminders" class="main-form">
+        <form v-show="isOpen" method="POST" action="/reminders" class="reminder-create-form">
             <input type="hidden" name="_token" :value="csrf" />
-            <div class="form-group">
-                <label for="title">Title:</label>
-                <input type="text" class="form-control" id="title" name="title" value="Title" >
-            </div>
 
-            <div class="form-group">
-                <label for="time">Time:</label>
-                <input type="datetime-local" class="form-control" id="time" name="time">
-            </div>
+            <section class="card">
 
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea type="text" class="form-control" id="description" name="description" rows="5">Enter a description here...</textarea>
-            </div>
+                <section class="card-header">
+                    <div class="form-group">
+                        <label for="title" hidden>Title:</label>
+                        <input type="text" class="form-control" id="title" name="title" value="Title" >
+                    </div>
+                </section>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+                <section class="card-body">
+
+                    <div class="form-group">
+                        <label for="time" hidden>Time:</label>
+                        <input type="datetime-local" class="form-control" id="time" name="time">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description" hidden>Description:</label>
+                        <textarea type="text" class="form-control" id="description" name="description" rows="3">Enter a description here...</textarea>
+                    </div>
+
+                </section>
+
+                <section class="card-footer">
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+                </section>
+
+            </section>
 
         </form>
 
