@@ -22,7 +22,7 @@
                                 </a>
                             </h5>
                             <span class="card-text">
-                                <form method="POST" action="/reminders/{{ $reminder->id }}">
+                                <form method="POST" action="/reminders/{{ $reminder->id }}/completed">
                                     {{ method_field("PATCH") }}
                                     {{ csrf_field() }}
                                     <label for="completed">Completed</label>
