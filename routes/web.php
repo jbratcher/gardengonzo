@@ -17,10 +17,10 @@ Route::get('/about', 'PagesController@about')->name('about');
 
 Route::get('/contact', 'PagesController@contact')->name('contact');
 
-Route::resource('reminders', 'RemindersController');
+Route::resource('reminders', 'RemindersController')->middleware('auth');
 
 // toggle completed state on form checkbox
-Route::patch('reminders/{reminder}/completed', 'RemindersController@completed');
+Route::patch('reminders/{reminder}/completed', 'RemindersController@completed')->middleware('auth');
 
 Auth::routes();
 
