@@ -45,6 +45,10 @@
 
         </form>
 
+        <reminders-list
+            reminders = "reminders"
+        ></reminders-list>
+
     </section>
 
 </template>
@@ -54,8 +58,15 @@
         data() {
             return {
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                isOpen: false
+                isOpen: false,
+                reminders: {
+                    type: Object,
+                    required: true
+                }
             }
-        }
+        },
+        prop: [
+            'reminders'
+        ]
     }
 </script>

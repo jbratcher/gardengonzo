@@ -8,55 +8,11 @@
 
         <h1>Reminders</h1>
 
-        <reminders-form></reminders-form>
+        <reminders-form
+                :reminders = "{{ $reminders }}"
+        ></reminders-form>
 
-        <ul class="reminders-list">
 
-            @forelse($reminders as $reminder)
-                <li>
-                    <section class="card">
-                        <section class="card-header {{ $reminder->completed ? 'reminder-completed-header' : 'reminder-header' }} " >
-                            <h5 class="card-title">
-                                <a href="reminders/{{ $reminder->id }}">
-                                    {{ $reminder->title }}
-                                </a>
-                            </h5>
-                            <span class="card-text">
-                                <form method="POST" action="/reminders/{{ $reminder->id }}/completed">
-                                    {{ method_field("PATCH") }}
-                                    {{ csrf_field() }}
-                                    <label for="completed">Completed</label>
-                                    <input type="checkbox" id="completed" name="completed" onChange="this.form.submit()" {{ $reminder->completed ? 'checked' : '' }}>
-                                </form>
-                            </span>
-                        </section>
-                        <section class="card-body">
-                            <p class="card-text">{{ $reminder->time }}</p>
-                            <p class="card-text">{{ $reminder->description }}</p>
-                        </section>
-                    </section>
-                </li>
-            @empty
-                <li>
-                    <section class="card">
-                        <section class="card-header">
-                            <h5 class="card-title">
-                                <a href="/reminders">
-                                    Reminder Title
-                                </a>
-                            </h5>
-                            <span class="card-text">
-                                <input type="checkbox">
-                            </span>
-                        </section>
-                        <section class="card-body">
-                            <p class="card-text">A short description of the reminder.</p>
-                        </section>
-                    </section>
-                </li>
-            @endforelse
-
-        </ul>
 
     </section>
 

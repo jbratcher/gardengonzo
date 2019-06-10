@@ -1,7 +1,7 @@
 <template>
 
-
     <ul>
+
         <li v-for="reminder in reminders">
             <section class="card">
                 <section :class=" reminder.completed ? 'reminder-completed-header card-header' : 'reminder-header card-header' " >
