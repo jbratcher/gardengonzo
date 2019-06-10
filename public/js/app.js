@@ -1855,14 +1855,10 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-      isOpen: false,
-      reminders: {
-        type: Object,
-        required: true
-      }
+      isOpen: false
     };
   },
-  prop: ['reminders']
+  props: ['reminders']
 });
 
 /***/ }),
@@ -37304,7 +37300,7 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("reminders-list", { attrs: { reminders: "reminders" } })
+      _c("reminders-list", { attrs: { reminders: _vm.reminders } })
     ],
     1
   )
@@ -37408,14 +37404,13 @@ var render = function() {
             },
             [
               _c("h5", { staticClass: "card-title" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(reminder.title) +
-                    "\n                    "
-                ),
-                _c("a", {
-                  attrs: { href: "reminders/" + reminder.id + "/completed" }
-                })
+                _c("a", { attrs: { href: "reminders/" + reminder.id } }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(reminder.title) +
+                      "\n                    "
+                  )
+                ])
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "card-text" }, [

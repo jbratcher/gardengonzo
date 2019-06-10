@@ -46,7 +46,7 @@
         </form>
 
         <reminders-list
-            reminders = "reminders"
+            :reminders = "reminders"
         ></reminders-list>
 
     </section>
@@ -58,14 +58,10 @@
         data() {
             return {
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                isOpen: false,
-                reminders: {
-                    type: Object,
-                    required: true
-                }
+                isOpen: false
             }
         },
-        prop: [
+        props: [
             'reminders'
         ]
     }
