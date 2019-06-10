@@ -45,6 +45,10 @@
 
         </form>
 
+        <reminders-list
+            :reminders = "reminders"
+        ></reminders-list>
+
     </section>
 
 </template>
@@ -56,6 +60,9 @@
                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                 isOpen: false
             }
-        }
+        },
+        props: [
+            'reminders'
+        ]
     }
 </script>

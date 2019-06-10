@@ -1847,13 +1847,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
       isOpen: false
     };
-  }
+  },
+  props: ['reminders']
 });
 
 /***/ }),
@@ -37256,43 +37261,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", [
-    _c("p", [
-      _c("i", {
-        staticClass: "fas fa-plus-circle",
-        on: {
-          click: function($event) {
-            _vm.isOpen = !_vm.isOpen
+  return _c(
+    "section",
+    [
+      _c("p", [
+        _c("i", {
+          staticClass: "fas fa-plus-circle",
+          on: {
+            click: function($event) {
+              _vm.isOpen = !_vm.isOpen
+            }
           }
-        }
-      }),
-      _vm._v("\n        Add a reminder\n    ")
-    ]),
-    _vm._v(" "),
-    _c(
-      "form",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.isOpen,
-            expression: "isOpen"
-          }
-        ],
-        staticClass: "reminder-create-form",
-        attrs: { method: "POST", action: "/reminders" }
-      },
-      [
-        _c("input", {
-          attrs: { type: "hidden", name: "_token" },
-          domProps: { value: _vm.csrf }
         }),
-        _vm._v(" "),
-        _vm._m(0)
-      ]
-    )
-  ])
+        _vm._v("\n        Add a reminder\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.isOpen,
+              expression: "isOpen"
+            }
+          ],
+          staticClass: "reminder-create-form",
+          attrs: { method: "POST", action: "/reminders" }
+        },
+        [
+          _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.csrf }
+          }),
+          _vm._v(" "),
+          _vm._m(0)
+        ]
+      ),
+      _vm._v(" "),
+      _c("reminders-list", { attrs: { reminders: _vm.reminders } })
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -37393,14 +37404,13 @@ var render = function() {
             },
             [
               _c("h5", { staticClass: "card-title" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(reminder.title) +
-                    "\n                    "
-                ),
-                _c("a", {
-                  attrs: { href: "reminders/" + reminder.id + "/completed" }
-                })
+                _c("a", { attrs: { href: "reminders/" + reminder.id } }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(reminder.title) +
+                      "\n                    "
+                  )
+                ])
               ]),
               _vm._v(" "),
               _c("span", { staticClass: "card-text" }, [

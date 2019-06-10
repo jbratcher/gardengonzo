@@ -1,13 +1,13 @@
 <template>
 
-
     <ul>
+
         <li v-for="reminder in reminders">
             <section class="card">
                 <section :class=" reminder.completed ? 'reminder-completed-header card-header' : 'reminder-header card-header' " >
                     <h5 class="card-title">
+                        <a :href="`reminders/` + reminder.id">
                             {{ reminder.title }}
-                        <a :href="`reminders/` + reminder.id + `/completed`">
                         </a>
                     </h5>
                     <span class="card-text">
