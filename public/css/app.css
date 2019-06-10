@@ -21460,7 +21460,6 @@ ul {
 .reminder-create-form {
   width: 30vw;
   height: auto;
-  min-height: 50vh;
 }
 
 .reminder-create-form .form-group {
