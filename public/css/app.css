@@ -21380,29 +21380,29 @@ ul {
 }
 
 .jumbotron-fluid {
-  margin: 0 0 4rem;
+  margin: 1rem 0;
 }
 
 .features-list {
   align-items: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .features-list p {
-  font-size: 1.25rem;
-  margin: 0 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 1rem 1rem 1.5rem;
 }
 
 .features-list img {
   border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 40vw;
-  height: 60vh;
-  margin: 0 auto;
+  width: 80vw;
+  height: 70vh;
+  margin: 0 auto 2rem;
 }
 
 .reminders-container h2,
@@ -21411,6 +21411,9 @@ ul {
 }
 
 .reminders-container ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
   margin: 4rem 0;
 }
 
@@ -21520,5 +21523,31 @@ ul {
 
 .show-date .card-footer {
   justify-content: center;
+}
+
+@media only screen and (min-width: 479px) {
+  .jumbotron-fluid {
+    margin: 0 0 4rem;
+  }
+
+  .features-list {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .features-list p {
+    align-self: start;
+    font-size: 1rem;
+    margin: 1rem 2rem;
+  }
+
+  .features-list img {
+    justify-self: end;
+    width: 40vw;
+    height: 60vh;
+    margin: 0 auto;
+  }
 }
 
