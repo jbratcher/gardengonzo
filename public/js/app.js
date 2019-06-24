@@ -1778,10 +1778,29 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-      isOpen: false
+      isOpen: false,
+      newReminder: {},
+      errors: {}
     };
   },
-  props: ['reminders']
+  props: {
+    reminders: Array
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      this.errors = {};
+      axios.post('/reminders', this.newReminder).then(function (response) {
+        console.log(response);
+        console.log(response.config.data);
+      })["catch"](function (error) {
+        if (error.response.status === 422) {
+          _this.errors = error.response.data.errors || {};
+        }
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -1827,13 +1846,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content')
     };
   },
-  props: ['reminders']
+  props: {
+    reminders: Array
+  }
 });
 
 /***/ }),
@@ -37132,7 +37155,13 @@ var render = function() {
             }
           ],
           staticClass: "reminder-create-form",
-          attrs: { method: "POST", action: "/reminders" }
+          attrs: { method: "POST", action: "/reminders" },
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.submit($event)
+            }
+          }
         },
         [
           _c("input", {
@@ -37140,7 +37169,115 @@ var render = function() {
             domProps: { value: _vm.csrf }
           }),
           _vm._v(" "),
-          _vm._m(0)
+          _c("section", { staticClass: "card" }, [
+            _c("section", { staticClass: "card-header" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "title", hidden: "" } }, [
+                  _vm._v("Title:")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newReminder.title,
+                      expression: "newReminder.title"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "title",
+                    name: "title",
+                    value: "Title"
+                  },
+                  domProps: { value: _vm.newReminder.title },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.newReminder, "title", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "time", hidden: "" } }, [
+                  _vm._v("Time:")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.newReminder.time,
+                      expression: "newReminder.time"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "datetime-local", id: "time", name: "time" },
+                  domProps: { value: _vm.newReminder.time },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.newReminder, "time", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "description", hidden: "" } }, [
+                  _vm._v("Description:")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "textarea",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.newReminder.description,
+                        expression: "newReminder.description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      id: "description",
+                      name: "description",
+                      rows: "3"
+                    },
+                    domProps: { value: _vm.newReminder.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.newReminder,
+                          "description",
+                          $event.target.value
+                        )
+                      }
+                    }
+                  },
+                  [_vm._v("Enter a description here...")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ])
         ]
       ),
       _vm._v(" "),
@@ -37154,61 +37291,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "card" }, [
-      _c("section", { staticClass: "card-header" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "title", hidden: "" } }, [
-            _vm._v("Title:")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "text", id: "title", name: "title", value: "Title" }
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "card-body" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "time", hidden: "" } }, [
-            _vm._v("Time:")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "datetime-local", id: "time", name: "time" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "description", hidden: "" } }, [
-            _vm._v("Description:")
-          ]),
-          _vm._v(" "),
-          _c(
-            "textarea",
-            {
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "description",
-                name: "description",
-                rows: "3"
-              }
-            },
-            [_vm._v("Enter a description here...")]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "card-footer" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-            [_vm._v("Submit")]
-          )
-        ])
+    return _c("section", { staticClass: "card-footer" }, [
+      _c("div", { staticClass: "form-group" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [_vm._v("Submit")]
+        )
       ])
     ])
   }
@@ -49465,7 +49554,10 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import and config axios for vue
+// import axios from 'axios';
+// window.axios = axios;
+
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**

@@ -6,6 +6,11 @@
 
 require('./bootstrap');
 
+// import and config axios for vue
+// import axios from 'axios';
+// window.axios = axios;
+
+
 window.Vue = require('vue');
 
 /**
