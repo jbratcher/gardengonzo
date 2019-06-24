@@ -1771,9 +1771,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37128,163 +37125,157 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    [
-      _c("p", [
-        _c("i", {
-          staticClass: "fas fa-plus-circle",
-          on: {
-            click: function($event) {
-              _vm.isOpen = !_vm.isOpen
-            }
+  return _c("section", { staticClass: "reminder-create-section" }, [
+    _c("p", { staticClass: "reminder-create-tagline" }, [
+      _c("i", {
+        staticClass: "fas fa-plus-circle",
+        on: {
+          click: function($event) {
+            _vm.isOpen = !_vm.isOpen
           }
+        }
+      }),
+      _vm._v("\n        Add a reminder\n    ")
+    ]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.isOpen,
+            expression: "isOpen"
+          }
+        ],
+        staticClass: "reminder-create-form",
+        attrs: { method: "POST", action: "/reminders" },
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.submit($event)
+          }
+        }
+      },
+      [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
         }),
-        _vm._v("\n        Add a reminder\n    ")
-      ]),
-      _vm._v(" "),
-      _c(
-        "form",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.isOpen,
-              expression: "isOpen"
-            }
-          ],
-          staticClass: "reminder-create-form",
-          attrs: { method: "POST", action: "/reminders" },
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.submit($event)
-            }
-          }
-        },
-        [
-          _c("input", {
-            attrs: { type: "hidden", name: "_token" },
-            domProps: { value: _vm.csrf }
-          }),
+        _vm._v(" "),
+        _c("section", { staticClass: "card" }, [
+          _c("section", { staticClass: "card-header" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "title", hidden: "" } }, [
+                _vm._v("Title:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newReminder.title,
+                    expression: "newReminder.title"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "title",
+                  name: "title",
+                  value: "Title"
+                },
+                domProps: { value: _vm.newReminder.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.newReminder, "title", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ]),
           _vm._v(" "),
-          _c("section", { staticClass: "card" }, [
-            _c("section", { staticClass: "card-header" }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "title", hidden: "" } }, [
-                  _vm._v("Title:")
-                ]),
-                _vm._v(" "),
-                _c("input", {
+          _c("section", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "time", hidden: "" } }, [
+                _vm._v("Time:")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.newReminder.time,
+                    expression: "newReminder.time"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "datetime-local", id: "time", name: "time" },
+                domProps: { value: _vm.newReminder.time },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.newReminder, "time", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "description", hidden: "" } }, [
+                _vm._v("Description:")
+              ]),
+              _vm._v(" "),
+              _c(
+                "textarea",
+                {
                   directives: [
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.newReminder.title,
-                      expression: "newReminder.title"
+                      value: _vm.newReminder.description,
+                      expression: "newReminder.description"
                     }
                   ],
                   staticClass: "form-control",
                   attrs: {
                     type: "text",
-                    id: "title",
-                    name: "title",
-                    value: "Title"
+                    id: "description",
+                    name: "description",
+                    rows: "3"
                   },
-                  domProps: { value: _vm.newReminder.title },
+                  domProps: { value: _vm.newReminder.description },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.newReminder, "title", $event.target.value)
+                      _vm.$set(
+                        _vm.newReminder,
+                        "description",
+                        $event.target.value
+                      )
                     }
                   }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("section", { staticClass: "card-body" }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "time", hidden: "" } }, [
-                  _vm._v("Time:")
-                ]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.newReminder.time,
-                      expression: "newReminder.time"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "datetime-local", id: "time", name: "time" },
-                  domProps: { value: _vm.newReminder.time },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.newReminder, "time", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "description", hidden: "" } }, [
-                  _vm._v("Description:")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "textarea",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.newReminder.description,
-                        expression: "newReminder.description"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "description",
-                      name: "description",
-                      rows: "3"
-                    },
-                    domProps: { value: _vm.newReminder.description },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.newReminder,
-                          "description",
-                          $event.target.value
-                        )
-                      }
-                    }
-                  },
-                  [_vm._v("Enter a description here...")]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _vm._m(0)
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("reminders-list", { attrs: { reminders: _vm.reminders } })
-    ],
-    1
-  )
+                },
+                [_vm._v("Enter a description here...")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {

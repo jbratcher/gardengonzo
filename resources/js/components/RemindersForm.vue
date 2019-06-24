@@ -1,8 +1,9 @@
 <template>
 
-    <section>
 
-        <p>
+    <section class="reminder-create-section">
+
+        <p class="reminder-create-tagline">
             <i class="fas fa-plus-circle" v-on:click="isOpen = !isOpen"></i>
             Add a reminder
         </p>
@@ -44,10 +45,6 @@
             </section>
 
         </form>
-
-        <reminders-list
-            :reminders = "reminders"
-        ></reminders-list>
 
     </section>
 

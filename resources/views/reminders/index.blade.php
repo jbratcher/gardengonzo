@@ -12,6 +12,10 @@
                 :reminders = "{{ $reminders }}"
         ></reminders-form>
 
+        <reminders-list
+                :reminders = "{{ $reminders }}"
+        ></reminders-list>
+
     </section>
 
 @endsection
